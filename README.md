@@ -5,19 +5,20 @@
 
 ## Use a properties file for configuration data
 
-You should not hardcode IP addresses or login credentials as string constants in Java code.  Use the guides "*No magic numbers*" and "*Separate what varies from what stays the same*". Configuration information should not be in Java code at all.
+You should not hardcode IP addresses or login credentials as string constants in Java.  Use the guides "*No magic numbers*" and "*Separate what varies from what stays the same*", and remove configuration data from Java code.
 
 A standard solution is to use a properties file.  Things you should include in a properties file are:
 
 * IP address and port numbers
-* URL, including JDBC URL
-* authentication parameters (login, password)
+* URLs, including JDBC URL
+* Authentication parameters (login, password). **Never** put these is Java code.
 * JDBC SQL Driver class name (so you can change it!)
-* Anything that is likely to vary, even for testing
+* Anything that is likely to vary, even during testing
 
-**Never** hardcode URLs, IP addresses, or username/password in Java code.
+Many open-source projects do this; for example, Log4J uses log4j.properties.
 
-Anyone with access to your source code or Github can steal your database URL and password.
+If you put authentication data in Java code, anyone with access to your source code 
+on Github can steal your database URL and password.
 You can also steal them from a JAR file by scanning for Strings in the Java bytecode.
 
 ### Example properties file
