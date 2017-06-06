@@ -30,13 +30,13 @@ Here is an example for the Typing Thrower application:
 # Add this file to .gitignore
 
 # key = value (don't put quotes around values)
-jdbc.url = jdbc:mysql://104.198.173.104:9999/names
+jdbc.url = jdbc:mysql://10.11.22.33:9999/names
 jdbc.user = foo
 jdbc.password = fatchance
 # Needed for JDBC, maybe not necessary for ORMlite
 jdbc.drivers = com.mysql.jdbc.Driver
 # Client side should have a separate properties file
-server.addr = 35.185.188.93
+server.addr = 10.11.22.99
 server.port = 3007
 ```
 Comment lines (#) and blank lines are allowed. The property keys (on left side of '=' sign) may contain '.' to avoid name collisions, such as `jdbc.user`.  The right side can be any string, without quotes.  By convention, property names (keys) are lowercase.
@@ -83,7 +83,7 @@ The code for chatapplication has the string values repeatedly used in several cl
 for example:
 ```java
 Class.forName("com.mysql.jdbc.Driver").newInstance();
-con = DriverManager.getConnection("jdbc:mysql://10.111.222.33:3306/projectdb?useSSL=false",
+con = DriverManager.getConnection("jdbc:mysql://10.11.22.33:3306/projectdb?useSSL=false",
 			"root",
 			"dont_use_root!");
 ```
