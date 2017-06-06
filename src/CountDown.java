@@ -58,7 +58,6 @@ public class CountDown extends JFrame {
 		pane.setOpaque(false); // so we can see the background image
 		pane.setPreferredSize(new Dimension(width,height));
 		window.add(pane, gbc);
-
 	}
 	
 	/**
@@ -70,12 +69,13 @@ public class CountDown extends JFrame {
 	public void countDown(final int countStart) {
 		// Create font once it once and save it so we don't recreate it (waste memory).
 		final String FONTNAME = "28 Days Later.ttf";
-		Font font = AbstractFont.getFont(FONTNAME).deriveFont(Font.BOLD, 300);
+		Font font = AbstractFont.getFont(FONTNAME);
+		Font numberFont = font.deriveFont(Font.BOLD, 300);
 		// A slightly smaller font for displaying text message, like "TYPE"
-		Font fontText = AbstractFont.getFont(FONTNAME).deriveFont(Font.BOLD, font.getSize()*3/4);
+		Font textFont = font.deriveFont(Font.BOLD, numberFont.getSize()*3/4);
 		JLabel number = new JLabel("     ", SwingConstants.CENTER);
 		number.setForeground(Color.YELLOW);
-		number.setFont(font);
+		number.setFont(numberFont);
 		// this might not be necessary
 		number.setSize(pane.getWidth()/2, pane.getHeight()/2);
 		number.setLocation( (pane.getWidth() - number.getWidth()) / 2,
@@ -90,11 +90,11 @@ public class CountDown extends JFrame {
 			public void run() {
 				if (countdown > 0) number.setText(Integer.toString(countdown));
 				else if (countdown == 0) {
-					number.setFont(fontText);
+					number.setFont(textFont);
 					number.setText("TYPE");
 				}
 				else {
-					// remove the count down label
+					// finished countdown. Remove components and cancel the task.
 					number.setVisible(false);
 					pane.remove(number);
 					cancel(); // cancel the TimerTask
