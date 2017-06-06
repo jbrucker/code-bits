@@ -1,7 +1,7 @@
-## Coding Bits
+## Contents
 
 1. How to use a properties file for configuration data.
-2. A simpler count-down timer for Typingthrower.
+2. A simpler count-down timer for TypingThrower.
 
 ## Use a properties file for configuration data
 
