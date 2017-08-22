@@ -125,6 +125,6 @@ In TypingThrower `HomeUI.java` the code for countdown timer is too complex.  `Co
 
 # Math in Markdown?
 
-A test of math rendering on Github: $a^2x^2 + bx + c = g_0(x)$ or maybe  \(a^2x^2 + bx + c = g_0(x)\)
+A test of math rendering on Github: $a_{n}x^{n}+a_{n-1}x^{n-1}+...+a_{0}$ or maybe  \(a_{n}x^{n}+a_{n-1}x^{n-1}+...+a_{0}\)
 
-Using external renderer: ![a_{n}x^{n}+a_{n-1}x^{n-1}+...+a_{0}](https://latex.codecogs.com/gif.latex?a_{n}x^{n}&plus;a_{n-1}x^{n-1}&plus;...&plus;a_{0})
+Using external renderer:  .  This is cool app: https://www.codecogs.com/latex/eqneditor.php
