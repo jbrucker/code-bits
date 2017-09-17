@@ -119,7 +119,12 @@ You could also make PropertyManager be a singleton and use instance methods, to 
 
 Since the properties file contains private information, add it to `.gitignore` to avoid committing to git.
 
-
 ## Timer and TimerTask example
 
 In TypingThrower `HomeUI.java` the code for countdown timer is too complex.  `Countdown.java` is example how to simplify it.
+
+# Math in Markdown?
+
+A test of math rendering on Github: $a_{n}x^{n}+a_{n-1}x^{n-1}+...+a_{0}$ or maybe  \(a_{n}x^{n}+a_{n-1}x^{n-1}+...+a_{0}\)
+
+Using external renderer:  .  This is cool app: https://www.codecogs.com/latex/eqneditor.php
