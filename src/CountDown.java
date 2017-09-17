@@ -82,9 +82,8 @@ public class CountDown extends JFrame {
 				(pane.getHeight() - number.getHeight()) / 2 );
 		pane.add(number);
 		
-		// A count-down timer using TimerTask
-		Timer timer = new Timer();
-		// The task to perform repeatedly, until cancelled:
+		// The task to perform repeatedly, until cancelled.
+		// Each time run() is called it shows a message and decrements the counter.
 		final TimerTask task = new TimerTask() {
 			int countdown = countStart;
 			public void run() {
@@ -97,13 +96,15 @@ public class CountDown extends JFrame {
 					// finished countdown. Remove components and cancel the task.
 					number.setVisible(false);
 					pane.remove(number);
-					cancel(); // cancel the TimerTask
+					cancel(); // cancel this TimerTask
 				}
 				countdown--;
 			}
 		};
+		// A Timer that invokes the TimerTask at fixed rate.
 		long period = 1000;  // frequency in milliseconds
 		long delay = 0;      // delay before first time the task is run
+		Timer timer = new Timer();
 		timer.scheduleAtFixedRate(task, delay, period);
 	}
 	
